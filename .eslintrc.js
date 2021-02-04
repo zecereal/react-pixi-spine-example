@@ -13,5 +13,5 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react'],
-  rules: { 'no-extra-semi': 'error' },
+  rules: { 'no-extra-semi': 'error', 'react/prop-types': 'off' },
 };
