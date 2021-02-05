@@ -4,14 +4,18 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ['eslint:recommended', 'plugin:react/recommended'],
+  extends: ["eslint:recommended", "plugin:react/recommended"],
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
     },
     ecmaVersion: 12,
-    sourceType: 'module',
+    sourceType: "module",
   },
-  plugins: ['react'],
-  rules: { 'no-extra-semi': 'error', 'react/prop-types': 'off' },
+  plugins: ["react"],
+  rules: {
+    "no-extra-semi": "error",
+    "react/prop-types": "off",
+    "no-unused-vars": "off",
+  },
 };
