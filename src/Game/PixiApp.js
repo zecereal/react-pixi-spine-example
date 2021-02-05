@@ -1,7 +1,6 @@
 import React, { useState, useContext, useEffect, useRef } from 'react';
 import * as PIXI from 'pixi.js';
 import { AppContext } from 'Game/AppContext';
-import { GameContext } from 'Game/GameContext';
 import { PixiContext } from 'Game/PixiContext';
 
 const createPixiApp = (view, options) => {
@@ -11,9 +10,8 @@ const createPixiApp = (view, options) => {
   return app;
 };
 
-const PixiApp = ({ content }) => {
+const PixiApp = ({ content, context }) => {
   const { width, height, innerWidth, innerHeight } = useContext(AppContext);
-  const gameContext = useContext(GameContext);
   const pixiContext = useContext(PixiContext);
   const { resolution } = pixiContext;
   const { audioRef, updateRatioRef } = useContext(AppContext);
@@ -33,7 +31,7 @@ const PixiApp = ({ content }) => {
     }
   }, []);
   useEffect(() => {
-    if (appRef.current) appRef.current = content(appRef.current, gameContext, audioRef, updateRatioRef);
+    if (appRef.current) appRef.current = content(appRef.current, context, audioRef, updateRatioRef);
   }, []);
   useEffect(() => {
     appRef.current.renderer.resolution = resolution;

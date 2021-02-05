@@ -20,7 +20,7 @@ const getDevicePixelRatio = (d) => {
 const PixiContext = createContext(initialContext);
 
 const PixiProvider = ({ children }) => {
-  const pixiContext = useContext(PixiContext);
+  const pixiContext = usePixiContext();
   const [resolution, setResolution] = useState(getDevicePixelRatio(1));
   return <PixiContext.Provider value={{ ...pixiContext, resolution, setResolution }}>{children}</PixiContext.Provider>;
 };

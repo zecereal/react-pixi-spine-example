@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { GameContext } from 'Contexts/GameContext';
 
-const GameUIMain = () => {
+const GameUICharacterSelection = () => {
   const gameContext = useContext(GameContext);
   const [count, setCount] = useState(0);
   console.log(gameContext);
@@ -10,7 +10,7 @@ const GameUIMain = () => {
       <button
         onClick={(e) => {
           e.preventDefault();
-          gameContext.events.addMessage('WTF');
+          gameContext.events.addMessage2('YAY');
           setCount((prev) => {
             return prev + 1;
           });
@@ -22,4 +22,4 @@ const GameUIMain = () => {
   );
 };
 
-export default GameUIMain;
+export default GameUICharacterSelection;

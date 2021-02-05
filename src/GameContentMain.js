@@ -3,7 +3,8 @@ import * as PIXI from 'pixi.js';
 import PIXISpine from 'Plugins/pixi-spine';
 
 // eslint-disable-next-line no-unused-vars
-const GameContentMain = (app, gameContext, audioRef, updateRatioRef) => {
+const GameContentMain = (app, context, audioRef, updateRatioRef) => {
+  console.log(context);
   const containerMain = new PIXI.Container();
   const containerText = new PIXI.Container();
   const testTextureWhite = PIXI.Sprite.from(PIXI.Texture.WHITE);
@@ -20,13 +21,12 @@ const GameContentMain = (app, gameContext, audioRef, updateRatioRef) => {
   containerMain.addChild(testMessage);
   app.stage.addChild(containerMain);
   app.stage.addChild(containerText);
-  gameContext.events = {
-    addMessage: (message) => {
-      const text = new PIXI.Text(message);
-      containerText.addChild(text);
-      const index = containerText.children.length;
-      text.position.set(0, (index - 1) * 30);
-    },
+  if (!context.events) context.events = {};
+  context.events.addMessage = (message) => {
+    const text = new PIXI.Text(message);
+    containerText.addChild(text);
+    const index = containerText.children.length;
+    text.position.set(0, (index - 1) * 30);
   };
   return app;
 };
