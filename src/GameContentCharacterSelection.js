@@ -6,7 +6,6 @@ import PIXISpine from 'Plugins/pixi-spine';
 const GameContentCharacterSelection = (app, gameContext, audioRef, updateRatioRef) => {
   const containerText = new PIXI.Container();
   const testMessage = new PIXI.Text('This is Character Selection canvas.');
-  testMessage.anchor.set(0.5, 0.5);
   containerText.addChild(testMessage);
   app.stage.addChild(containerText);
   return app;
