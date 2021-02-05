@@ -7,4 +7,12 @@ const GameProvider = ({ children }) => {
   return <GameContext.Provider value={context}>{children}</GameContext.Provider>;
 };
 
-export { GameContext, GameProvider };
+const useGameContext = () => {
+  const context = useContext(GameContext);
+  if (context === undefined) {
+    throw new Error('Cannot find GameContext.');
+  }
+  return context;
+};
+
+export { GameContext, GameProvider, useGameContext};

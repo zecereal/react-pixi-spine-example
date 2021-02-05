@@ -25,4 +25,12 @@ const PixiProvider = ({ children }) => {
   return <PixiContext.Provider value={{ ...pixiContext, resolution, setResolution }}>{children}</PixiContext.Provider>;
 };
 
-export { PixiContext, PixiProvider };
+const usePixiContext = () => {
+  const context = useContext(PixiContext);
+  if (context === undefined) {
+    throw new Error('Cannot find PixiContext.');
+  }
+  return context;
+};
+
+export { PixiContext, PixiProvider, usePixiContext };
