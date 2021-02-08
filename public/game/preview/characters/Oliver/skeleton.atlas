@@ -1,0 +1,139 @@
+
+skeleton.png
+size: 764,764
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Kim_Body
+  rotate: true
+  xy: 93, 482
+  size: 275, 326
+  orig: 275, 326
+  offset: 0, 0
+  index: -1
+Kim_FaceCharge
+  rotate: true
+  xy: 307, 370
+  size: 54, 33
+  orig: 54, 33
+  offset: 0, 0
+  index: -1
+Kim_FaceDefeat
+  rotate: false
+  xy: 693, 198
+  size: 52, 53
+  orig: 52, 53
+  offset: 0, 0
+  index: -1
+Kim_FaceHit
+  rotate: false
+  xy: 307, 328
+  size: 27, 38
+  orig: 27, 38
+  offset: 0, 0
+  index: -1
+Kim_FaceIdle
+  rotate: false
+  xy: 307, 428
+  size: 36, 50
+  orig: 36, 50
+  offset: 0, 0
+  index: -1
+Kim_FaceVictory
+  rotate: false
+  xy: 693, 141
+  size: 52, 53
+  orig: 52, 53
+  offset: 0, 0
+  index: -1
+Kim_Feather
+  rotate: false
+  xy: 423, 595
+  size: 204, 162
+  orig: 204, 162
+  offset: 0, 0
+  index: -1
+Kim_Gun
+  rotate: false
+  xy: 4, 137
+  size: 85, 620
+  orig: 85, 620
+  offset: 0, 0
+  index: -1
+Kim_Hat
+  rotate: false
+  xy: 355, 256
+  size: 216, 222
+  orig: 216, 222
+  offset: 0, 0
+  index: -1
+Kim_HatWing
+  rotate: false
+  xy: 4, 5
+  size: 347, 128
+  orig: 347, 128
+  offset: 0, 0
+  index: -1
+Kim_Head
+  rotate: true
+  xy: 93, 242
+  size: 236, 210
+  orig: 236, 210
+  offset: 0, 0
+  index: -1
+Kim_LeftArm
+  rotate: false
+  xy: 93, 138
+  size: 239, 100
+  orig: 239, 100
+  offset: 0, 0
+  index: -1
+Kim_LeftEar
+  rotate: true
+  xy: 355, 4
+  size: 119, 230
+  orig: 119, 230
+  offset: 0, 0
+  index: -1
+Kim_LeftLeg
+  rotate: true
+  xy: 423, 482
+  size: 109, 223
+  orig: 109, 223
+  offset: 0, 0
+  index: -1
+Kim_LeftShoulder
+  rotate: false
+  xy: 631, 633
+  size: 98, 124
+  orig: 98, 124
+  offset: 0, 0
+  index: -1
+Kim_RightArm
+  rotate: true
+  xy: 589, 12
+  size: 239, 100
+  orig: 239, 100
+  offset: 0, 0
+  index: -1
+Kim_RightEar
+  rotate: true
+  xy: 355, 127
+  size: 125, 230
+  orig: 125, 230
+  offset: 0, 0
+  index: -1
+Kim_RightLeg
+  rotate: false
+  xy: 589, 255
+  size: 109, 223
+  orig: 109, 223
+  offset: 0, 0
+  index: -1
+Kim_RightShoulder
+  rotate: false
+  xy: 650, 505
+  size: 98, 124
+  orig: 98, 124
+  offset: 0, 0
+  index: -1

@@ -38,7 +38,6 @@ export default class CharacterOliver extends CharacterBase {
           const preload = new PIXI.Loader();
           preload.add('character', EnvUrl.getGame('/spine/Oliver/skeleton.json'));
           preload.load((loader, resources) => {
-            console.log(resources['character']);
             let spineData = resources['character'].spineData;
             if (spineData) {
               let spine = new PIXISpine.Spine(spineData);

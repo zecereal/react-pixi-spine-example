@@ -60,7 +60,7 @@ const GameContentCharacterSelection = (app, context, audioRef, updateRatioRef) =
   app.stage.addChild(containerMain);
   if (!context.characterSelection) context.characterSelection = {};
   context.characterSelection.loadPreviewCharacter = (characterID) => {
-    if (gameData.activeCharacter) gameData.activeCharacter.destroy();
+    //if (gameData.activeCharacter) gameData.activeCharacter.destroy();
     return createCharacter(characterID)
       .then((character) => {
         if (gameData.activeCharacter) gameData.activeCharacter.destroy();

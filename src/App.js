@@ -11,14 +11,30 @@ const App = ({ root }) => {
   const gameContext = useContext(GameContext);
   return (
     <>
-      <GameContext.Provider value={gameContext}>
-        <div className="gameCanvas">
-          <GameManager width={600} height={360} content={GameContentCharacterSelection} context={gameContext} />
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+        <div>
+          <h1 style={{ fontSize: 'large' }}>Main Menu Preview</h1>
+          <GameContext.Provider value={gameContext}>
+            <div className="gameCanvas">
+              <GameManager width={800} height={450} content={GameContentMain} context={gameContext} />
+            </div>
+            <div className="gameUI">
+              <GameUIMain />
+            </div>
+          </GameContext.Provider>
         </div>
-        <div className="gameUI">
-          <GameUICharacterSelection />
+        <div>
+          <h1 style={{ fontSize: 'large' }}>Character Selection Preview</h1>
+          <GameContext.Provider value={gameContext}>
+            <div className="gameCanvas">
+              <GameManager width={600} height={360} content={GameContentCharacterSelection} context={gameContext} />
+            </div>
+            <div className="gameUI">
+              <GameUICharacterSelection />
+            </div>
+          </GameContext.Provider>
         </div>
-      </GameContext.Provider>
+      </div>
     </>
   );
 };
