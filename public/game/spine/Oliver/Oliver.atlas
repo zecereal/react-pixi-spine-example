@@ -1,0 +1,139 @@
+
+Oliver.png
+size: 512,512
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Kim_Body
+  rotate: false
+  xy: 51, 340
+  size: 137, 163
+  orig: 137, 163
+  offset: 0, 0
+  index: -1
+Kim_FaceCharge
+  rotate: false
+  xy: 97, 196
+  size: 27, 16
+  orig: 27, 16
+  offset: 0, 0
+  index: -1
+Kim_FaceDefeat
+  rotate: false
+  xy: 190, 72
+  size: 26, 26
+  orig: 26, 26
+  offset: 0, 0
+  index: -1
+Kim_FaceHit
+  rotate: false
+  xy: 51, 193
+  size: 13, 19
+  orig: 13, 19
+  offset: 0, 0
+  index: -1
+Kim_FaceIdle
+  rotate: true
+  xy: 68, 194
+  size: 18, 25
+  orig: 18, 25
+  offset: 0, 0
+  index: -1
+Kim_FaceVictory
+  rotate: false
+  xy: 220, 72
+  size: 26, 26
+  orig: 26, 26
+  offset: 0, 0
+  index: -1
+Kim_Feather
+  rotate: true
+  xy: 250, 401
+  size: 102, 81
+  orig: 102, 81
+  offset: 0, 0
+  index: -1
+Kim_Gun
+  rotate: false
+  xy: 4, 193
+  size: 43, 310
+  orig: 43, 310
+  offset: 0, 0
+  index: -1
+Kim_Hat
+  rotate: false
+  xy: 214, 276
+  size: 108, 111
+  orig: 108, 111
+  offset: 0, 0
+  index: -1
+Kim_HatWing
+  rotate: true
+  xy: 4, 15
+  size: 174, 64
+  orig: 174, 64
+  offset: 0, 0
+  index: -1
+Kim_Head
+  rotate: true
+  xy: 105, 218
+  size: 118, 105
+  orig: 118, 105
+  offset: 0, 0
+  index: -1
+Kim_LeftArm
+  rotate: true
+  xy: 51, 216
+  size: 120, 50
+  orig: 120, 50
+  offset: 0, 0
+  index: -1
+Kim_LeftEar
+  rotate: false
+  xy: 126, 77
+  size: 60, 115
+  orig: 60, 115
+  offset: 0, 0
+  index: -1
+Kim_LeftLeg
+  rotate: false
+  xy: 190, 102
+  size: 54, 112
+  orig: 54, 112
+  offset: 0, 0
+  index: -1
+Kim_LeftShoulder
+  rotate: false
+  xy: 191, 6
+  size: 49, 62
+  orig: 49, 62
+  offset: 0, 0
+  index: -1
+Kim_RightArm
+  rotate: true
+  xy: 72, 70
+  size: 120, 50
+  orig: 120, 50
+  offset: 0, 0
+  index: -1
+Kim_RightEar
+  rotate: true
+  xy: 72, 4
+  size: 62, 115
+  orig: 62, 115
+  offset: 0, 0
+  index: -1
+Kim_RightLeg
+  rotate: false
+  xy: 192, 391
+  size: 54, 112
+  orig: 54, 112
+  offset: 0, 0
+  index: -1
+Kim_RightShoulder
+  rotate: false
+  xy: 244, 6
+  size: 49, 62
+  orig: 49, 62
+  offset: 0, 0
+  index: -1

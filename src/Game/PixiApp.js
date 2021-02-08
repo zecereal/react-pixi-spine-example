@@ -25,13 +25,13 @@ const PixiApp = ({ content, context }) => {
   useEffect(() => {
     if (appRef.current) {
       console.error("PIXI Application will be reset if context is changed. Please don't change context!");
-      return;
     } else {
-      appRef.current = createPixiApp(viewRef.current, initialOption);
+      const [app, onRelease] = content(createPixiApp(viewRef.current, initialOption), context, audioRef, updateRatioRef);
+      appRef.current = app;
+      return () => {
+        onRelease();
+      };
     }
-  }, []);
-  useEffect(() => {
-    if (appRef.current) appRef.current = content(appRef.current, context, audioRef, updateRatioRef);
   }, []);
   useEffect(() => {
     appRef.current.renderer.resolution = resolution;

@@ -3,20 +3,16 @@ import { GameContext } from 'Contexts/GameContext';
 
 const GameUICharacterSelection = () => {
   const gameContext = useContext(GameContext);
-  const [count, setCount] = useState(0);
   console.log(gameContext);
   return (
     <>
       <button
         onClick={(e) => {
           e.preventDefault();
-          gameContext.events.addMessage2('YAY');
-          setCount((prev) => {
-            return prev + 1;
-          });
+          gameContext.characterSelection.loadCharacter('123', 'vnd-001');
         }}
       >
-        {count}
+        Load Character
       </button>
     </>
   );

@@ -8,22 +8,14 @@ import GameUICharacterSelection from 'GameUICharacterSelection';
 import 'App.css';
 
 const App = ({ root }) => {
-  const gameContextMain = useContext(GameContext);
+  const gameContext = useContext(GameContext);
   return (
     <>
-      <GameContext.Provider value={gameContextMain}>
+      <GameContext.Provider value={gameContext}>
         <div className="gameCanvas">
-          <GameManager width={600} height={360} content={GameContentMain} context={gameContextMain} />
+          <GameManager width={600} height={360} content={GameContentCharacterSelection} context={gameContext} />
         </div>
         <div className="gameUI">
-          <GameUIMain />
-        </div>
-      </GameContext.Provider>
-      <GameContext.Provider value={gameContextMain}>
-        <div className="gameCanvas2">
-          <GameManager width={600} height={360} content={GameContentCharacterSelection} context={gameContextMain} />
-        </div>
-        <div className="gameUI2">
           <GameUICharacterSelection />
         </div>
       </GameContext.Provider>

@@ -4,28 +4,27 @@ class UpdateRatio {
     this.width = 0;
     this.height = 0;
   }
-  addCallback(name, callback) {
-    this.list.push({
-      name,
-      callback,
-    });
+  add(callback) {
+    this.list.push(callback);
     callback(this.width, this.height);
   }
-  removeCallback(name) {
-    for (let i = 0; i < this.list.length; i++) {
-      if (this.list[i].name === name) {
-        this.list.splice(i, 1);
-        return true;
-      }
+  remove(callback) {
+    const index = this.list.indexOf(callback);
+    if (index < 0) return false;
+    else {
+      this.list.splice(index, 1);
+      return true;
     }
-    return false;
+  }
+  clear() {
+    this.list = [];
   }
   update(width, height) {
     this.width = width;
     this.height = height;
-    for (let i = 0; i < this.list.length; i++) {
-      this.list[i].callback(width, height);
-    }
+    this.list.forEach((callback) => {
+      callback(width, height);
+    });
   }
 }
 

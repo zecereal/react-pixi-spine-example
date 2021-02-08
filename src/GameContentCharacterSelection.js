@@ -1,21 +1,79 @@
 import * as PIXI from 'pixi.js';
-// eslint-disable-next-line no-unused-vars
 import PIXISpine from 'Plugins/pixi-spine';
+import Cache from 'Game/Classes/Cache';
+import CharacterData from 'Game/Characters/Data.json';
 
-// eslint-disable-next-line no-unused-vars
 const GameContentCharacterSelection = (app, context, audioRef, updateRatioRef) => {
-  const containerText = new PIXI.Container();
-  const testMessage = new PIXI.Text('This is Character Selection canvas.');
-  containerText.addChild(testMessage);
-  app.stage.addChild(containerText);
-  if (!context.events) context.events = {};
-  context.events.addMessage2 = (message) => {
-    const text = new PIXI.Text(message);
-    containerText.addChild(text);
-    const index = containerText.children.length;
-    text.position.set(0, (index - 1) * 30);
+  const gameData = {
+    cacheCharacters: new Cache(),
+    activeCharacters: [],
   };
-  return app;
+  const containerMain = new PIXI.Container();
+  const containerView = new PIXI.Container();
+  const onMainResize = (width, height) => {
+    containerMain.position.set(width / 2, height / 2);
+  };
+  updateRatioRef.current.add(onMainResize);
+  const onRelease = () => {
+    delete gameData.cacheCharacters;
+    updateRatioRef.current.remove(onMainResize);
+    console.log('pixi released');
+  };
+  const createCharacter = (characterID) => {
+    return new Promise((resolve, reject) => {
+      if (gameData.cacheCharacters.exist(characterID)) {
+        let moduleClass = gameData.cacheCharacters.get(characterID);
+        let characterClass = new moduleClass();
+        characterClass
+          .create(audioRef.current)
+          .then((character) => {
+            resolve(character);
+          })
+          .catch((e) => {
+            console.error(e);
+            reject({ error: 'CANNOT_LOAD_CHARACTER' });
+          });
+      } else {
+        import(`${CharacterData[characterID]}`)
+          .then((module) => {
+            let moduleClass = module.default;
+            let characterClass = new moduleClass();
+            gameData.cacheCharacters.add(characterID, moduleClass);
+            characterClass
+              .create(audioRef.current)
+              .then((character) => {
+                resolve(character);
+              })
+              .catch((e) => {
+                console.error(e);
+                reject({ error: 'CANNOT_LOAD_CHARACTER' });
+              });
+          })
+          .catch((e) => {
+            console.error(e);
+            reject({ error: 'CANNOT_IMPORT_CLASS' });
+          });
+      }
+    });
+  };
+  containerMain.addChild(containerView);
+  app.stage.addChild(containerMain);
+  if (!context.characterSelection) context.characterSelection = {};
+  context.characterSelection.loadCharacter = (uuid, characterID) => {
+    return createCharacter(characterID)
+      .then((character) => {
+        gameData.activeCharacters[uuid] = character;
+        const { spine } = character;
+        containerView.addChild(spine);
+        character.playState('idle');
+        spine.position.set(0, 0);
+        return character;
+      })
+      .catch((e) => {
+        console.error(e);
+      });
+  };
+  return [app, onRelease];
 };
 
 export default GameContentCharacterSelection;
