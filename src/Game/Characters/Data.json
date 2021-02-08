@@ -1,3 +1,5 @@
 {
-  "vnd-001": "./Game/Characters/vnd-001/Character.js"
+  "vnd-001": "./Game/Characters/vnd-001/Character.js",
+  "vnd-003": "./Game/Characters/vnd-003/Character.js",
+  "vnd-004": "./Game/Characters/vnd-004/Character.js"
 }

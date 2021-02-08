@@ -3,7 +3,7 @@ import PIXISpine from 'Plugins/pixi-spine';
 import CharacterBase from 'Game/Characters/Base';
 import EnvUrl from 'Components/EnvUrl';
 
-export default class CharacterOliver extends CharacterBase {
+export default class CharacterVonder extends CharacterBase {
   constructor() {
     super();
     this._scale = 0.1;
@@ -36,7 +36,7 @@ export default class CharacterOliver extends CharacterBase {
       let promises = [
         new Promise((resolve, reject) => {
           const preload = new PIXI.Loader();
-          preload.add('character', EnvUrl.getGame('/spine/Oliver/skeleton.json'));
+          preload.add('character', EnvUrl.getGame('/spine/Vonder/skeleton.json'));
           preload.load((loader, resources) => {
             console.log(resources['character']);
             let spineData = resources['character'].spineData;

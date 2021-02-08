@@ -1,8 +1,8 @@
 import React, { createContext, useContext, useState } from 'react';
 
 const initialContext = {
-  transparent: false,
-  backgroundColor: 0x264d8e,
+  transparent: true,
+  backgroundColor: null,
   antialias: false,
   autoDensity: false,
   sharedTicker: true,

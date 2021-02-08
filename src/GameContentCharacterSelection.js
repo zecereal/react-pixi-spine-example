@@ -6,12 +6,12 @@ import CharacterData from 'Game/Characters/Data.json';
 const GameContentCharacterSelection = (app, context, audioRef, updateRatioRef) => {
   const gameData = {
     cacheCharacters: new Cache(),
-    activeCharacters: [],
+    activeCharacter: null,
   };
   const containerMain = new PIXI.Container();
   const containerView = new PIXI.Container();
   const onMainResize = (width, height) => {
-    containerMain.position.set(width / 2, height / 2);
+    containerMain.position.set(width / 2, height - 30);
   };
   updateRatioRef.current.add(onMainResize);
   const onRelease = () => {
@@ -59,10 +59,12 @@ const GameContentCharacterSelection = (app, context, audioRef, updateRatioRef) =
   containerMain.addChild(containerView);
   app.stage.addChild(containerMain);
   if (!context.characterSelection) context.characterSelection = {};
-  context.characterSelection.loadCharacter = (uuid, characterID) => {
+  context.characterSelection.loadPreviewCharacter = (characterID) => {
+    if (gameData.activeCharacter) gameData.activeCharacter.destroy();
     return createCharacter(characterID)
       .then((character) => {
-        gameData.activeCharacters[uuid] = character;
+        if (gameData.activeCharacter) gameData.activeCharacter.destroy();
+        gameData.activeCharacter = character;
         const { spine } = character;
         containerView.addChild(spine);
         character.playState('idle');
