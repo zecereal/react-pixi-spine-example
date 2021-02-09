@@ -23,10 +23,10 @@ const useBackgroundMusic = (audioRef, src, autoplay) => {
         howlRef.current.stop();
       }
     }
-  }, [isOn]);
+  }, [howlRef, isOn, isReady]);
   useEffect(() => {
     if (audioRef.current) audioRef.current.volume('bgm', volume);
-  }, [volume]);
+  }, [audioRef, volume]);
   return [isOn, setIsOn, volume, setVolume];
 };
 

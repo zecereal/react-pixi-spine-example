@@ -1,4 +1,6 @@
 import * as PIXI from 'pixi.js';
+// Ignore PIXISpine because it's need to initialize during import.
+// eslint-disable-next-line no-unused-vars
 import PIXISpine from 'Plugins/pixi-spine';
 import Cache from 'Game/Classes/Cache';
 import CharacterData from 'Game/Characters/Data.json';

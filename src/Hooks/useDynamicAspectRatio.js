@@ -21,7 +21,7 @@ const useDynamicAspectRatio = (root, aspectRatio, minRatio, maxRatio) => {
       setInnerWidth(width);
       setInnerHeight(height);
     }
-  });
+  }, [aspectRatio, maxRatio, minRatio, root]);
   useLayoutEffect(() => {
     window.addEventListener('resize', resizeCallback);
     window.addEventListener('load', resizeCallback);

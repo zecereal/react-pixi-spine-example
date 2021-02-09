@@ -7,7 +7,6 @@ const GameUIMain = () => {
   const [backgroundList] = useState(['vonder', 'mayurabad']);
   const [characterSelect, setCharacterSelect] = useState(characterList[0]);
   const [backgroundSelect, setBackgroundSelect] = useState(backgroundList[0]);
-  const [isLoading, setLoading] = useState(false);
   const renderCharacterOptions = useCallback(() => {
     return characterList.map((characterID, index) => {
       return <option key={index}>{characterID}</option>;
@@ -21,9 +20,8 @@ const GameUIMain = () => {
   useEffect(() => {
     if (characterSelect && backgroundSelect)
       gameContext.main.loadPreview(characterSelect, backgroundSelect).then(() => {
-        setLoading(false);
       });
-  }, [characterSelect, backgroundSelect]);
+  }, [backgroundSelect, characterSelect, gameContext.main]);
   return (
     <>
       <form
@@ -36,7 +34,6 @@ const GameUIMain = () => {
           onChange={(e) => {
             e.preventDefault();
             setCharacterSelect(e.target.value);
-            setLoading(true);
           }}
         >
           {renderCharacterOptions()}
@@ -46,7 +43,6 @@ const GameUIMain = () => {
           onChange={(e) => {
             e.preventDefault();
             setBackgroundSelect(e.target.value);
-            setLoading(true);
           }}
         >
           {renderBackgroundOptions()}

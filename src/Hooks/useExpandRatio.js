@@ -11,23 +11,15 @@ const useExpandRatio = (root, w, h, minRatio, maxRatio, targetRatio) => {
     if (!isNaN(screenRatio)) {
       if (screenRatio < targetRatio) {
         const _h = Math.round(w / screenRatio);
-        setWidth((prev) => {
-          if (prev != w) return w;
-        });
-        setHeight((prev) => {
-          if (prev != _h) return _h;
-        });
+        setWidth(w);
+        setHeight(_h);
       } else {
         const _w = Math.round(h * screenRatio);
-        setWidth((prev) => {
-          if (prev != _w) return _w;
-        });
-        setHeight((prev) => {
-          if (prev != h) return h;
-        });
+        setWidth(_w);
+        setHeight(h);
       }
     }
-  }, [innerWidth, innerHeight]);
+  }, [w, h, innerWidth, innerHeight, targetRatio]);
   return [width, height, innerWidth, innerHeight];
 };
 

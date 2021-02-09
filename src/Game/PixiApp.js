@@ -32,14 +32,14 @@ const PixiApp = ({ content, context }) => {
         onRelease();
       };
     }
-  }, []);
+  }, [audioRef, content, context, initialOption, updateRatioRef]);
   useEffect(() => {
     appRef.current.renderer.resolution = resolution;
   }, [resolution]);
   useEffect(() => {
     appRef.current.renderer.resize(width, height);
     updateRatioRef.current.update(width, height);
-  }, [width, height]);
+  }, [width, height, updateRatioRef]);
   return <canvas ref={viewRef} style={{ width: innerWidth, height: innerHeight }}></canvas>;
 };
 

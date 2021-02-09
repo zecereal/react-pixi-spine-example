@@ -1,4 +1,6 @@
 import * as PIXI from 'pixi.js';
+// Ignore PIXISpine because it's need to initialize during import.
+// eslint-disable-next-line no-unused-vars
 import PIXISpine from 'Plugins/pixi-spine';
 import PreviewData from 'Game/Data/Preview.json';
 import EnvUrl from 'Components/EnvUrl';
@@ -43,7 +45,6 @@ const GameContentMain = (app, context, audioRef, updateRatioRef) => {
     });
   };
   const loadLevel = (levelID) => {
-    console.log(levelID);
     return new Promise((resolve, reject) => {
       if (PreviewData.levels[levelID]) {
         const preload = new PIXI.Loader();

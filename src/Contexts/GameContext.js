@@ -1,4 +1,4 @@
-import React, { createContext, useContext } from 'react';
+import { createContext, useContext } from 'react';
 
 const GameContext = createContext({});
 
@@ -10,4 +10,4 @@ const useGameContext = () => {
   return context;
 };
 
-export { GameContext, useGameContext};
+export { GameContext, useGameContext };

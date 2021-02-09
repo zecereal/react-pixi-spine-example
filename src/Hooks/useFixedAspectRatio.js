@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useLayoutEffect, useState } from 'react';
 
 const useFixedAspectRatio = (root, aspectRatio) => {
   const [innerWidth, setInnerWidth] = useState(0);
   const [innerHeight, setInnerHeight] = useState(0);
-  const resizeCallback = () => {
+  const resizeCallback = useCallback(() => {
     if (!root || isNaN(aspectRatio)) return;
     let size = window.getComputedStyle(root);
     let width = parseInt(size.width.replace('px', ''), 10);
@@ -18,8 +18,8 @@ const useFixedAspectRatio = (root, aspectRatio) => {
       setInnerWidth(width);
       setInnerHeight(adaptHeight);
     }
-  };
-  useEffect(() => {
+  }, [aspectRatio, root]);
+  useLayoutEffect(() => {
     window.addEventListener('resize', resizeCallback);
     window.addEventListener('load', resizeCallback);
     window.addEventListener('focus', resizeCallback);

@@ -4,16 +4,18 @@ const useSound = (audioRef, options, group) => {
   const [isReady, setIsReady] = useState(false);
   const howlRef = useRef();
   useEffect(() => {
-    audioRef.current
-      .loadAsync(options, group)
-      .then((howl) => {
-        howlRef.current = howl;
-        setIsReady(true);
-      })
-      .catch((e) => {
-        console.error(e);
-      });
-  }, [howlRef]);
+    if (!audioRef.current) {
+      audioRef.current
+        .loadAsync(options, group)
+        .then((howl) => {
+          howlRef.current = howl;
+          setIsReady(true);
+        })
+        .catch((e) => {
+          console.error(e);
+        });
+    }
+  }, [audioRef, group, options]);
   return [isReady, howlRef];
 };
 
