@@ -1,0 +1,174 @@
+
+Vonder-fs8.png
+size: 880,880
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Vonder_Body
+  rotate: false
+  xy: 433, 406
+  size: 394, 468
+  orig: 394, 468
+  offset: 0, 0
+  index: -1
+Vonder_FaceAttack
+  rotate: false
+  xy: 754, 4
+  size: 79, 29
+  orig: 79, 29
+  offset: 0, 0
+  index: -1
+Vonder_FaceDefeat
+  rotate: true
+  xy: 830, 51
+  size: 75, 33
+  orig: 75, 33
+  offset: 0, 0
+  index: -1
+Vonder_FaceHit
+  rotate: false
+  xy: 837, 32
+  size: 12, 15
+  orig: 12, 15
+  offset: 0, 0
+  index: -1
+Vonder_FaceIdle
+  rotate: true
+  xy: 830, 130
+  size: 77, 41
+  orig: 77, 41
+  offset: 0, 0
+  index: -1
+Vonder_FaceVictory
+  rotate: true
+  xy: 96, 10
+  size: 74, 33
+  orig: 74, 33
+  offset: 0, 0
+  index: -1
+Vonder_LeftArm
+  rotate: false
+  xy: 433, 304
+  size: 265, 98
+  orig: 265, 98
+  offset: 0, 0
+  index: -1
+Vonder_LeftEar
+  rotate: true
+  xy: 4, 88
+  size: 111, 149
+  orig: 111, 149
+  offset: 0, 0
+  index: -1
+Vonder_LeftEyeAttack
+  rotate: true
+  xy: 651, 10
+  size: 90, 99
+  orig: 90, 99
+  offset: 0, 0
+  index: -1
+Vonder_LeftEyeDead
+  rotate: false
+  xy: 754, 37
+  size: 63, 63
+  orig: 63, 63
+  offset: 0, 0
+  index: -1
+Vonder_LeftEyeDefeat
+  rotate: true
+  xy: 535, 13
+  size: 92, 112
+  orig: 92, 112
+  offset: 0, 0
+  index: -1
+Vonder_LeftEyeHit
+  rotate: false
+  xy: 264, 107
+  size: 79, 92
+  orig: 79, 92
+  offset: 0, 0
+  index: -1
+Vonder_LeftEyeIdle
+  rotate: false
+  xy: 157, 20
+  size: 79, 91
+  orig: 79, 91
+  offset: 0, 0
+  index: -1
+Vonder_LeftLeg
+  rotate: false
+  xy: 702, 211
+  size: 131, 191
+  orig: 131, 191
+  offset: 0, 0
+  index: -1
+Vonder_Nose
+  rotate: true
+  xy: 670, 273
+  size: 27, 24
+  orig: 27, 24
+  offset: 0, 0
+  index: -1
+Vonder_RightArm
+  rotate: true
+  xy: 433, 35
+  size: 265, 98
+  orig: 265, 98
+  offset: 0, 0
+  index: -1
+Vonder_RightEar
+  rotate: true
+  xy: 670, 104
+  size: 103, 156
+  orig: 103, 156
+  offset: 0, 0
+  index: -1
+Vonder_RightEyeAttack
+  rotate: true
+  xy: 240, 25
+  size: 78, 88
+  orig: 78, 88
+  offset: 0, 0
+  index: -1
+Vonder_RightEyeDead
+  rotate: false
+  xy: 347, 138
+  size: 60, 61
+  orig: 60, 61
+  offset: 0, 0
+  index: -1
+Vonder_RightEyeDefeat
+  rotate: true
+  xy: 157, 115
+  size: 84, 103
+  orig: 84, 103
+  offset: 0, 0
+  index: -1
+Vonder_RightEyeHit
+  rotate: true
+  xy: 4, 5
+  size: 79, 88
+  orig: 79, 88
+  offset: 0, 0
+  index: -1
+Vonder_RightEyeIdle
+  rotate: false
+  xy: 332, 21
+  size: 74, 82
+  orig: 74, 82
+  offset: 0, 0
+  index: -1
+Vonder_RightLeg
+  rotate: false
+  xy: 535, 109
+  size: 131, 191
+  orig: 131, 191
+  offset: 0, 0
+  index: -1
+Vonder_Tail
+  rotate: false
+  xy: 4, 203
+  size: 425, 671
+  orig: 426, 671
+  offset: 0, 0
+  index: -1

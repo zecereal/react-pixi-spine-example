@@ -36,7 +36,7 @@ export default class CharacterOliver extends CharacterBase {
       let promises = [
         new Promise((resolve, reject) => {
           const preload = new PIXI.Loader();
-          preload.add('character', EnvUrl.getGame('/spine/Oliver/skeleton.json'));
+          preload.add('character', EnvUrl.getGame('/spine/Oliver/Oliver-fs8.json'));
           preload.load((loader, resources) => {
             let spineData = resources['character'].spineData;
             if (spineData) {

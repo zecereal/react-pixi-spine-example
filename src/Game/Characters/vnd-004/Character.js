@@ -36,7 +36,7 @@ export default class CharacterVonder extends CharacterBase {
       let promises = [
         new Promise((resolve, reject) => {
           const preload = new PIXI.Loader();
-          preload.add('character', EnvUrl.getGame('/spine/Vonder/skeleton.json'));
+          preload.add('character', EnvUrl.getGame('/spine/Vonder/Vonder-fs8.json'));
           preload.load((loader, resources) => {
             console.log(resources['character']);
             let spineData = resources['character'].spineData;
